@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Sweet Baby Mimo ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Sacramento&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#F4F7F4',
+                            100: '#E8EFE9',
+                            200: '#D1DFC3',
+                            300: '#A3B19B',
+                            500: '#8A9A86',
+                            700: '#586A55',
+                            900: '#344232'
+                        },
+                        skysoft: {
+                            50: '#F4F8FA',
+                            100: '#EBF2F7',
+                            200: '#D5E5F2',
+                            300: '#B0C4DE',
+                            500: '#7A93AC',
+                            700: '#4A627C'
+                        },
+                        cream: '#FAF8F5',
+                        ivory: '#FFFDF9',
+                        blush: '#FBF0F2',
+                        blushlight: '#FFF5F7'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        display: ['"Playfair Display"', 'Georgia', 'serif'],
+                        handwriting: ['"Sacramento"', 'cursive'],
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'pulse-gentle': 'pulseGentle 3s ease-in-out infinite',
+                        'bloom': 'bloomScale 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+                        'glow': 'glowPulse 2.5s infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(3deg)' }
+                        },
+                        pulseGentle: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.85', transform: 'scale(1.03)' }
+                        },
+                        glowPulse: {
+                            '0%': { filter: 'drop-shadow(0 0 5px rgba(232, 239, 233, 0.5))' },
+                            '100%': { filter: 'drop-shadow(0 0 20px rgba(176, 196, 222, 0.8))' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #FAF8F5;
+            color: #344232;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 253, 249, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(232, 239, 233, 0.85);
+            box-shadow: 0 10px 30px -10px rgba(138, 154, 134, 0.12);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #FAF8F5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #A3B19B;
+            border-radius: 999px;
+        }
+        
+        /* Interactive Lily Petal Bloom Dynamics */
+        .lily-petal-path {
+            transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease;
+            transform-origin: 100px 140px;
+        }
+        
+        /* Reduced Motion Mode */
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            #particle-canvas {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-sage-900 selection:bg-sage-200 selection:text-sage-900 custom-scrollbar relative">
+
+    <!-- Floating Background Canvas for Organic Lily Petals & Click Particle Flares -->
+    <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-10 w-full h-full"></canvas>
+
+    <!-- SPLASH SCREEN / AUDIO ENGAGEMENT MODAL -->
+    <div id="splash-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-sage-50/95 backdrop-blur-md transition-opacity duration-1000">
+        <div class="glass-card max-w-lg w-full p-8 md:p-10 rounded-3xl text-center space-y-6 shadow-2xl border border-white relative overflow-hidden transform transition-all duration-700">
+            
+            <!-- High-Detail SVG Lily Graphic Header -->
+            <div class="flex justify-center mb-2">
+                <svg width="80" height="80" viewBox="0 0 200 200" fill="none" class="animate-pulse-gentle">
+                    <defs>
+                        <linearGradient id="splashLilyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFFDF9" />
+                            <stop offset="70%" stop-color="#F4F8FA" />
+                            <stop offset="100%" stop-color="#E8EFE9" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Curved Stem -->
+                    <path d="M100 180 C95 140 100 110 100 90" stroke="#8A9A86" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M100 150 C80 140 60 145 50 155 C70 160 90 155 100 150Z" fill="#A3B19B" opacity="0.8"/>
+                    <!-- Outer Trumpet Petals -->
+                    <path d="M100 90 C70 80 30 50 20 20 C50 30 80 60 100 90Z" fill="url(#splashLilyGrad)" stroke="#D1DFC3" stroke-width="1.5"/>
+                    <path d="M100 90 C130 80 170 50 180 20 C150 30 120 60 100 90Z" fill="url(#splashLilyGrad)" stroke="#D1DFC3" stroke-width="1.5"/>
+                    <path d="M100 90 C90 60 80 20 100 10 C120 20 110 60 100 90Z" fill="#FFFDF9" stroke="#D1DFC3" stroke-width="1.5"/>
+                    <!-- Stamens with Pollen Tips -->
+                    <path d="M100 90 Q85 65 75 45" stroke="#A3B19B" stroke-width="2" fill="none"/>
+                    <ellipse cx="75" cy="45" rx="4" ry="2" fill="#D9A752"/>
+                    <path d="M100 90 Q100 60 100 40" stroke="#A3B19B" stroke-width="2" fill="none"/>
+                    <ellipse cx="100" cy="40" rx="4" ry="2" fill="#D9A752"/>
+                    <path d="M100 90 Q115 65 125 45" stroke="#A3B19B" stroke-width="2" fill="none"/>
+                    <ellipse cx="125" cy="45" rx="4" ry="2" fill="#D9A752"/>
+                </svg>
+            </div>
+
+            <p class="font-handwriting text-3xl md:text-4xl text-sage-700">I have something for you...</p>
+            <h1 class="font-display text-2xl md:text-3xl text-sage-900 font-medium tracking-wide">
+                Happy Birthday, <span id="splash-partner-name" class="text-sage-700 italic">Mimo</span> ❤️
+            </h1>
+            <p class="font-serif text-lg text-sage-700 italic leading-relaxed">
+                "For my sweet little baby, my angel, my love... this little world was created just for you."
+            </p>
+
+            <div class="pt-4">
+                <button id="enter-btn" class="w-full py-4 px-8 rounded-full bg-gradient-to-r from-sage-500 to-skysoft-500 hover:from-sage-700 hover:to-skysoft-700 text-white font-medium text-lg tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center space-x-3 group">
+                    <span>Enter Our Little World</span>
+                    <span class="text-sm opacity-90 group-hover:scale-125 transition-transform">🌸</span>
+                </button>
+            </div>
+            
+            <p class="text-xs text-sage-500/80 italic pt-2">
+                Turn sound on for the sweet background music 🎵
+            </p>
+        </div>
+    </div>
+
+    <!-- TOP NAVBAR & MINIMAL AUDIO CONTROLLER -->
+    <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 py-3 sm:px-8">
+        <div class="max-w-6xl mx-auto flex items-center justify-between glass-card px-5 py-2.5 rounded-full border border-white/60 shadow-sm">
+            
+            <!-- Brand / Name -->
+            <a href="#hero" class="font-handwriting text-2xl md:text-3xl text-sage-900 hover:text-sage-700 transition flex items-center space-x-2">
+                <span>Mimo & Me</span>
+                <span class="text-sm">🌸</span>
+            </a>
+
+            <!-- Quick Nav Links -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-sage-700">
+                <a href="#our-story" class="hover:text-sage-900 transition">Our Story</a>
+                <a href="#timeline" class="hover:text-sage-900 transition">Memories</a>
+                <a href="#why-i-love-you" class="hover:text-sage-900 transition">Why Mimo</a>
+                <a href="#scrapbook" class="hover:text-sage-900 transition">Gallery</a>
+                <a href="#love-letter" class="hover:text-sage-900 transition">Letter 💌</a>
+                <a href="#surprises" class="hover:text-sage-900 transition">Surprises</a>
+            </nav>
+
+            <!-- Audio & Customization Controls -->
+            <div class="flex items-center space-x-3">
+                <button id="music-toggle-btn" title="Play/Pause Background Melody" class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-sage-100 hover:bg-sage-200 text-sage-700 text-xs font-medium transition shadow-sm border border-sage-200">
+                    <i id="music-icon" class="fa-solid fa-music text-sage-500 animate-pulse"></i>
+                    <span id="music-status-text" class="hidden sm:inline">Playing Music</span>
+                </button>
+
+                <button id="open-config-btn" title="How to edit website details" class="w-8 h-8 rounded-full bg-skysoft-100 hover:bg-skysoft-200 text-skysoft-700 flex items-center justify-center text-xs transition border border-skysoft-200">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-20">
+
+        <!-- SECTION 1: HERO / WELCOME WITH DETAILED LILY FRAME -->
+        <section id="hero" class="min-h-screen flex items-center justify-center relative pt-20 px-4 overflow-hidden">
+            <!-- Dreamy Light Blurs -->
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-skysoft-200/40 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-sage-200/40 rounded-full blur-3xl -z-10"></div>
+            
+            <div class="text-center max-w-4xl mx-auto space-y-8 py-12 relative">
+                
+                <!-- Stylized Decorative Lily Bouquet Header Frame -->
+                <div class="flex items-center justify-center space-x-4 mb-2 opacity-90">
+                    <!-- Left Curved Lily Stem -->
+                    <svg width="90" height="60" viewBox="0 0 120 80" fill="none" class="hidden sm:block">
+                        <path d="M110 70 C80 60 40 40 10 20" stroke="#A3B19B" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M30 30 C10 10 0 20 10 20 C20 20 30 40 30 30Z" fill="#FFFDF9" stroke="#D1DFC3"/>
+                        <path d="M60 45 C40 25 30 35 40 35 C50 35 60 55 60 45Z" fill="#FFFDF9" stroke="#D1DFC3"/>
+                    </svg>
+
+                    <!-- Central Blooming Lily Icon -->
+                    <div class="inline-flex items-center space-x-2 px-5 py-2 rounded-full bg-sage-100/90 border border-sage-200 text-sage-700 text-xs md:text-sm tracking-widest uppercase font-medium shadow-sm">
+                        <span>🌸</span>
+                        <span>A Universe For Oumaima</span>
+                        <span>🌸</span>
+                    </div>
+
+                    <!-- Right Mirror Curved Lily Stem -->
+                    <svg width="90" height="60" viewBox="0 0 120 80" fill="none" class="hidden sm:block">
+                        <path d="M10 70 C40 60 80 40 110 20" stroke="#A3B19B" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M90 30 C110 10 120 20 110 20 C100 20 90 40 90 30Z" fill="#FFFDF9" stroke="#D1DFC3"/>
+                        <path d="M60 45 C80 25 90 35 80 35 C70 35 60 55 60 45Z" fill="#FFFDF9" stroke="#D1DFC3"/>
+                    </svg>
+                </div>
+
+                <h1 class="font-display text-4xl sm:text-6xl md:text-7xl text-sage-900 font-normal tracking-tight leading-tight">
+                    Happy Birthday, <br/>
+                    <span id="hero-partner-name" class="font-handwriting text-5xl sm:text-7xl md:text-8xl text-sage-700 block mt-2">Mimo</span>
+                </h1>
+
+                <p id="hero-subtitle" class="font-serif text-xl sm:text-2xl text-sage-700 max-w-2xl mx-auto italic leading-relaxed px-4">
+                    "My sweet little baby Mimo, my angel, my love, habobti... <br class="hidden sm:inline"/>
+                    This little place is just for you."
+                </p>
+
+                <!-- Scroll Indicator -->
+                <div class="pt-8 flex flex-col items-center space-y-3">
+                    <span class="text-xs uppercase tracking-widest text-sage-500 font-medium">Scroll to explore our world</span>
+                    <a href="#our-story" class="w-10 h-10 rounded-full border border-sage-300 flex items-center justify-center text-sage-600 hover:bg-sage-100 transition animate-bounce">
+                        <i class="fa-solid fa-arrow-down text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: OUR STORY -->
+        <section id="our-story" class="py-24 px-4 sm:px-6 max-w-4xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 space-y-8 relative overflow-hidden border border-white shadow-xl">
+                
+                <div class="flex items-center space-x-4">
+                    <div class="h-px bg-sage-200 flex-1"></div>
+                    <span class="font-serif italic text-sage-600 text-lg flex items-center space-x-2">
+                        <span>🌱</span>
+                        <span>Our Journey</span>
+                        <span>🌱</span>
+                    </span>
+                    <div class="h-px bg-sage-200 flex-1"></div>
+                </div>
+
+                <h2 class="font-display text-3xl sm:text-4xl text-center text-sage-900 font-medium">
+                    Somehow, We Found Our Way Back
+                </h2>
+
+                <div class="space-y-6 font-serif text-lg md:text-xl text-sage-800 leading-relaxed text-justify sm:text-left">
+                    <p>
+                        Our story didn't follow a simple straight line, but that is precisely what makes it so uniquely beautiful. We first walked into each other’s lives years ago, sharing moments that remained quiet treasures inside my heart even when time passed.
+                    </p>
+                    <p class="bg-sage-50/80 p-6 rounded-2xl border-l-4 border-sage-500 italic text-sage-700 shadow-sm">
+                        "Sometimes life gives us a pause so we can understand what truly matters. Life has a gentle way of guiding two souls back to where they truly belong."
+                    </p>
+                    <p>
+                        A simple misunderstanding took us down separate paths for a while. Yet despite the distance and time, the warmth of what we shared never truly faded. When our paths crossed again, it was clear that some connections are far deeper than timing. We came back together stronger, wiser, and sweeter than ever before.
+                    </p>
+                    <p class="text-center font-handwriting text-3xl text-sage-700 pt-2">
+                        I am so grateful every single day that I get to hold your hand again, Habobti. ❤️
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: MEMORIES TIMELINE -->
+        <section id="timeline" class="py-20 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <p class="text-xs uppercase tracking-widest text-sage-500 font-medium">Chapter by Chapter</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-sage-900 font-medium">Our Favorite Memories</h2>
+                <p class="font-serif italic text-sage-600">The quiet milestones that brought us right here today.</p>
+            </div>
+
+            <div id="timeline-container" class="relative border-l-2 border-sage-200 ml-4 sm:ml-32 space-y-12">
+                <!-- Injected via JavaScript from CONFIG.timelineEvents -->
+            </div>
+        </section>
+
+        <!-- SECTION 4: WHY I LOVE YOU -->
+        <section id="why-i-love-you" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <p class="text-xs uppercase tracking-widest text-sage-500 font-medium">The Little Things</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-sage-900 font-medium">Everything That Makes You "Mimo"</h2>
+                <p class="font-serif italic text-sage-600">Click any card to read why my heart belongs to you.</p>
+            </div>
+
+            <div id="reasons-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Injected via JavaScript from CONFIG.loveReasons -->
+            </div>
+        </section>
+
+        <!-- SECTION 5: MEMORIES SCRAPBOOK -->
+        <section id="scrapbook" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <p class="text-xs uppercase tracking-widest text-sage-500 font-medium">Captured Moments</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-sage-900 font-medium">Our Memory Scrapbook</h2>
+                <p class="font-serif italic text-sage-600">A soft collection of moments, smiles, and sweet memories.</p>
+            </div>
+
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-2">
+                <!-- Injected via JS from CONFIG.photoList -->
+            </div>
+        </section>
+
+        <!-- SECTION 6: THE LOVE LETTER -->
+        <section id="love-letter" class="py-24 px-4 sm:px-6 max-w-4xl mx-auto">
+            <div class="text-center space-y-3 mb-12">
+                <p class="text-xs uppercase tracking-widest text-sage-500 font-medium">From My Heart</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-sage-900 font-medium">A Letter For You 💌</h2>
+            </div>
+
+            <div class="envelope-wrapper max-w-2xl mx-auto">
+                <div id="envelope-card" class="glass-card rounded-3xl p-8 sm:p-12 border border-sage-200 relative shadow-xl space-y-6 text-center cursor-pointer transition-all duration-500 hover:shadow-2xl">
+                    
+                    <div id="letter-preview-state" class="space-y-6 py-8">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-sage-100 flex items-center justify-center text-sage-600 text-3xl shadow-inner">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-sage-900">Mimo, you have a private letter...</h3>
+                        <p class="text-sm text-sage-600">Click anywhere on this envelope to open it</p>
+                        <button class="px-6 py-2.5 rounded-full bg-sage-500 text-white text-sm font-medium hover:bg-sage-700 transition shadow">
+                            Open Love Letter 💌
+                        </button>
+                    </div>
+
+                    <div id="letter-content-state" class="hidden text-left space-y-6 font-serif text-lg text-sage-900 leading-relaxed pt-4 border-t border-sage-200/60">
+                        <div id="letter-paragraphs" class="space-y-4">
+                            <!-- Injected from CONFIG.loveLetter -->
+                        </div>
+                        <div class="pt-6 text-right font-handwriting text-3xl text-sage-700">
+                            Always yours, <br/>
+                            <span class="text-2xl font-sans text-sage-900 font-medium">Your Love ❤️</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: TIME TOGETHER COUNTER -->
+        <section id="counter-section" class="py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 text-center space-y-8 border border-white shadow-lg">
+                <div class="space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-sage-500 font-medium">Every Single Second Counts</p>
+                    <h2 class="font-display text-3xl sm:text-4xl text-sage-900 font-medium">We've Been Together For</h2>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 pt-4">
+                    <div class="bg-sage-50/80 p-4 rounded-2xl border border-sage-200">
+                        <span id="timer-years" class="font-display text-3xl sm:text-4xl text-sage-800 font-bold block">0</span>
+                        <span class="text-xs uppercase tracking-wider text-sage-600 font-medium">Years</span>
+                    </div>
+                    <div class="bg-sage-50/80 p-4 rounded-2xl border border-sage-200">
+                        <span id="timer-months" class="font-display text-3xl sm:text-4xl text-sage-800 font-bold block">0</span>
+                        <span class="text-xs uppercase tracking-wider text-sage-600 font-medium">Months</span>
+                    </div>
+                    <div class="bg-sage-50/80 p-4 rounded-2xl border border-sage-200">
+                        <span id="timer-days" class="font-display text-3xl sm:text-4xl text-sage-800 font-bold block">0</span>
+                        <span class="text-xs uppercase tracking-wider text-sage-600 font-medium">Days</span>
+                    </div>
+                    <div class="bg-sage-50/80 p-4 rounded-2xl border border-sage-200">
+                        <span id="timer-hours" class="font-display text-3xl sm:text-4xl text-sage-800 font-bold block">0</span>
+                        <span class="text-xs uppercase tracking-wider text-sage-600 font-medium">Hours</span>
+                    </div>
+                    <div class="bg-sage-50/80 p-4 rounded-2xl border border-sage-200">
+                        <span id="timer-minutes" class="font-display text-3xl sm:text-4xl text-sage-800 font-bold block">0</span>
+                        <span class="text-xs uppercase tracking-wider text-sage-600 font-medium">Mins</span>
+                    </div>
+                    <div class="bg-sage-50/80 p-4 rounded-2xl border border-sage-200">
+                        <span id="timer-seconds" class="font-display text-3xl sm:text-4xl text-sage-800 font-bold block">0</span>
+                        <span class="text-xs uppercase tracking-wider text-sage-600 font-medium">Secs</span>
+                    </div>
+                </div>
+
+                <p class="font-serif italic text-sage-600 text-sm">
+                    ...and I still fall for you more with every single passing tick.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 8: SURPRISES & MINI-GAMES -->
+        <section id="surprises" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto space-y-16">
+            <div class="text-center space-y-3">
+                <p class="text-xs uppercase tracking-widest text-sage-500 font-medium">Little Interactive Surprises</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-sage-900 font-medium">Just For Your Smile</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- 1. Heart Click Counter -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 text-center space-y-6 flex flex-col justify-between border border-white">
+                    <div class="space-y-2">
+                        <h3 class="font-display text-xl text-sage-900 font-medium">How Much Do I Love You?</h3>
+                        <p class="text-xs text-sage-600">Tap the heart to count!</p>
+                    </div>
+
+                    <div class="py-4">
+                        <button id="heart-burst-btn" class="w-24 h-24 mx-auto rounded-full bg-blush flex items-center justify-center text-red-400 text-4xl shadow-md hover:scale-110 active:scale-95 transition-all duration-200 border border-red-100">
+                            ❤️
+                        </button>
+                        <div id="heart-count-display" class="font-display text-3xl text-sage-900 font-bold mt-4">
+                            0
+                        </div>
+                    </div>
+
+                    <p id="heart-message" class="font-serif italic text-sm text-sage-700 min-h-[40px] flex items-center justify-center">
+                        Tap away, Mimo!
+                    </p>
+                </div>
+
+                <!-- 2. Mini Quiz Game -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 text-center space-y-6 flex flex-col justify-between border border-white">
+                    <div class="space-y-2">
+                        <h3 class="font-display text-xl text-sage-900 font-medium">Our Little Quiz 🧩</h3>
+                        <p class="text-xs text-sage-600">How well do you know us?</p>
+                    </div>
+
+                    <div id="quiz-container" class="space-y-4 py-2">
+                        <!-- Quiz populated dynamically -->
+                    </div>
+
+                    <div id="quiz-feedback" class="text-xs font-medium text-sage-700 min-h-[20px]">
+                        Question <span id="quiz-step">1</span> of <span id="quiz-total">3</span>
+                    </div>
+                </div>
+
+                <!-- 3. Mystery Gift Box -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 text-center space-y-6 flex flex-col justify-between border border-white">
+                    <div class="space-y-2">
+                        <h3 class="font-display text-xl text-sage-900 font-medium">Mystery Birthday Gift 🎁</h3>
+                        <p class="text-xs text-sage-600">A special reminder wrapped up for you</p>
+                    </div>
+
+                    <div class="py-4">
+                        <button id="gift-box-btn" class="w-24 h-24 mx-auto rounded-3xl bg-skysoft-100 flex items-center justify-center text-4xl shadow-md hover:rotate-6 hover:scale-105 active:scale-95 transition-all duration-300 border border-skysoft-200">
+                            🎁
+                        </button>
+                    </div>
+
+                    <p class="text-xs text-sage-600 italic">
+                        Click the present to open your surprise!
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 9: SCROLL BLOOMING LILIES MOTIF -->
+        <section id="blooming-lilies" class="py-20 px-4 text-center max-w-4xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 space-y-6 relative overflow-hidden border border-white shadow-xl">
+                <p class="text-xs uppercase tracking-widest text-sage-500 font-medium">Symbol of My Love For You</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-sage-900 font-medium">Pure Lilies For My Mimo</h2>
+                
+                <!-- Highly Detailed Multi-Petal Vector Lily SVG with Interactive Bloom -->
+                <div class="py-6 flex justify-center">
+                    <svg id="lily-svg-bloom" class="w-56 h-56 transition-all duration-1000 transform scale-90 cursor-pointer" viewBox="0 0 200 200" fill="none">
+                        <defs>
+                            <radialGradient id="lilyCenterGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#E8EFE9" />
+                                <stop offset="60%" stop-color="#FFFDF9" />
+                                <stop offset="100%" stop-color="#D1DFC3" />
+                            </radialGradient>
+                            <linearGradient id="petalSoftGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#FFFDF9" />
+                                <stop offset="85%" stop-color="#F4F8FA" />
+                                <stop offset="100%" stop-color="#EBF2F7" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Stem and Leaves -->
+                        <path d="M100 190 C98 160 100 140 100 130" stroke="#8A9A86" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M100 165 C75 160 50 170 35 185 C60 185 85 175 100 165Z" fill="#A3B19B" opacity="0.9"/>
+                        <path d="M100 155 C125 150 150 160 165 175 C140 175 115 165 100 155Z" fill="#8A9A86" opacity="0.9"/>
+
+                        <!-- Back Outer Petals -->
+                        <path class="lily-petal-path" d="M100 130 C60 120 20 80 10 40 C40 45 80 85 100 130Z" fill="url(#petalSoftGrad)" stroke="#D1DFC3" stroke-width="1.5"/>
+                        <path class="lily-petal-path" d="M100 130 C140 120 180 80 190 40 C160 45 120 85 100 130Z" fill="url(#petalSoftGrad)" stroke="#D1DFC3" stroke-width="1.5"/>
+                        <path class="lily-petal-path" d="M100 130 C90 80 85 30 100 10 C115 30 110 80 100 130Z" fill="url(#petalSoftGrad)" stroke="#D1DFC3" stroke-width="1.5"/>
+
+                        <!-- Inner Flared Petals with Gentle Veins -->
+                        <path class="lily-petal-path" d="M100 130 C75 100 45 60 30 25 C65 40 90 85 100 130Z" fill="url(#lilyCenterGrad)" stroke="#A3B19B" stroke-width="1.2"/>
+                        <path class="lily-petal-path" d="M100 130 C125 100 155 60 170 25 C135 40 110 85 100 130Z" fill="url(#lilyCenterGrad)" stroke="#A3B19B" stroke-width="1.2"/>
+                        <path class="lily-petal-path" d="M100 130 C95 90 90 50 100 20 C110 50 105 90 100 130Z" fill="#FFFDF9" stroke="#A3B19B" stroke-width="1.2"/>
+
+                        <!-- Petal Center Vein Details -->
+                        <path d="M100 130 C98 95 97 50 100 22" stroke="#D1DFC3" stroke-width="1" stroke-dasharray="2,2"/>
+                        <path d="M100 130 C78 100 55 70 33 28" stroke="#D1DFC3" stroke-width="1" stroke-dasharray="2,2"/>
+                        <path d="M100 130 C122 100 145 70 167 28" stroke="#D1DFC3" stroke-width="1" stroke-dasharray="2,2"/>
+
+                        <!-- Center Long Elegant Stamens with Anthers -->
+                        <g id="stamen-group">
+                            <path d="M100 125 Q80 90 65 60" stroke="#8A9A86" stroke-width="2" fill="none"/>
+                            <ellipse cx="65" cy="60" rx="5" ry="2.5" fill="#D9A752" transform="rotate(-20 65 60)"/>
+
+                            <path d="M100 125 Q90 85 82 50" stroke="#8A9A86" stroke-width="2" fill="none"/>
+                            <ellipse cx="82" cy="50" rx="5" ry="2.5" fill="#D9A752" transform="rotate(-10 82 50)"/>
+
+                            <path d="M100 125 Q100 80 100 45" stroke="#8A9A86" stroke-width="2.2" fill="none"/>
+                            <ellipse cx="100" cy="45" rx="5.5" ry="2.5" fill="#C6923A"/>
+
+                            <path d="M100 125 Q110 85 118 50" stroke="#8A9A86" stroke-width="2" fill="none"/>
+                            <ellipse cx="118" cy="50" rx="5" ry="2.5" fill="#D9A752" transform="rotate(10 118 50)"/>
+
+                            <path d="M100 125 Q120 90 135 60" stroke="#8A9A86" stroke-width="2" fill="none"/>
+                            <ellipse cx="135" cy="60" rx="5" ry="2.5" fill="#D9A752" transform="rotate(20 135 60)"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <p class="font-serif italic text-lg text-sage-700 max-w-xl mx-auto">
+                    "Like lilies that bloom with gentle grace, your presence brings softness, calm, and sweet warmth into my whole world."
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 10: FINAL CONCLUSION WITH LILY WREATH -->
+        <section id="final-section" class="py-32 px-4 text-center relative overflow-hidden bg-gradient-to-b from-transparent via-sage-100/50 to-sage-200/40">
+            <div class="max-w-3xl mx-auto space-y-8 relative z-10">
+                
+                <!-- Final Decorative Lily Frame Icon -->
+                <div class="w-20 h-20 mx-auto rounded-full bg-white flex items-center justify-center text-sage-600 text-3xl shadow-md border border-sage-200">
+                    🌸
+                </div>
+
+                <h2 class="font-display text-4xl sm:text-5xl md:text-6xl text-sage-900 font-normal leading-tight">
+                    And This Is Only The Beginning...
+                </h2>
+
+                <p id="final-message-text" class="font-serif text-xl sm:text-2xl text-sage-800 leading-relaxed italic max-w-2xl mx-auto px-4">
+                    <!-- Injected from CONFIG.finalMessage -->
+                </p>
+
+                <div class="pt-8 space-y-2">
+                    <p class="font-handwriting text-4xl sm:text-5xl text-sage-700">Happy Birthday, my sweet baby Mimo ❤️</p>
+                    <p class="font-sans text-xs uppercase tracking-widest text-sage-600 font-semibold pt-4">Always & Forever Yours</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-xs text-sage-500 border-t border-sage-200/60 bg-ivory">
+        <p>Handcrafted with endless love for Oumaima (Mimo) ❤️ Happy Birthday!</p>
+    </footer>
+
+    <!-- MYSTERY GIFT MODAL -->
+    <div id="gift-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-sage-900/40 backdrop-blur-md hidden transition-opacity duration-300">
+        <div class="glass-card max-w-lg w-full p-8 rounded-3xl text-center space-y-6 shadow-2xl border border-white">
+            <div class="text-5xl animate-bounce">🎁</div>
+            <h3 class="font-display text-2xl text-sage-900 font-medium">A Reminder From My Heart</h3>
+            <p id="mystery-gift-text" class="font-serif text-lg text-sage-800 leading-relaxed italic bg-white/60 p-6 rounded-2xl border border-sage-100">
+                <!-- Injected from CONFIG.mysteryGiftMessage -->
+            </p>
+            <button id="close-gift-btn" class="px-6 py-2.5 rounded-full bg-sage-500 text-white font-medium text-sm hover:bg-sage-700 transition">
+                Close & Keep Smiling ❤️
+            </button>
+        </div>
+    </div>
+
+    <!-- EASY CONFIGURATION / HELP MODAL -->
+    <div id="config-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-sage-900/40 backdrop-blur-md hidden transition-opacity duration-300">
+        <div class="glass-card max-w-2xl w-full p-6 sm:p-8 rounded-3xl space-y-6 shadow-2xl border border-white max-h-[85vh] overflow-y-auto custom-scrollbar">
+            <div class="flex items-center justify-between border-b border-sage-200 pb-4">
+                <h3 class="font-display text-xl text-sage-900 font-medium flex items-center space-x-2">
+                    <i class="fa-solid fa-sliders text-sage-600"></i>
+                    <span>How To Personalize This Website</span>
+                </h3>
+                <button id="close-config-btn" class="w-8 h-8 rounded-full bg-sage-100 hover:bg-sage-200 flex items-center justify-center text-sage-700 text-sm">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-sm text-sage-800 font-sans leading-relaxed">
+                <p>
+                    <strong>Everything on this site is fully customizable!</strong> At the top of the <code>&lt;script&gt;</code> tag in this HTML file, you will find the master object named <code class="bg-sage-100 px-1.5 py-0.5 rounded text-sage-900">CONFIG</code>.
+                </p>
+                <div class="bg-sage-50 p-4 rounded-xl space-y-2 border border-sage-200 text-xs font-mono text-sage-900">
+                    <p>✏️ <strong>partnerName:</strong> Change her name or nicknames.</p>
+                    <p>✏️ <strong>relationshipStartDate:</strong> Set your exact date string for the counter.</p>
+                    <p>✏️ <strong>photoList:</strong> Add your real photo paths or image URLs!</p>
+                    <p>✏️ <strong>musicPath:</strong> Link your favorite MP3 file (e.g. <code>audio/our-song.mp3</code>).</p>
+                    <p>✏️ <strong>timelineEvents & loveLetter:</strong> Edit any memories or letter text.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ==========================================================================
+           1. MASTER CONFIGURATION OBJECT (EASY TO EDIT)
+           ========================================================================== */
+        const CONFIG = {
+            partnerName: 'Oumaima',
+            nicknames: [
+                'Mimo',
+                'My sweet little baby Mimo',
+                'My baby',
+                'My angel',
+                'My love',
+                'Habobti'
+            ],
+            birthdayDate: 'September 30',
+
+            relationshipStartDate: '2020-05-15T00:00:00',
+            relationshipReunitedDate: '2023-11-01T00:00:00',
+
+            musicPath: 'audio/our-song.mp3',
+
+            timelineEvents: [
+                {
+                    title: 'The Beginning',
+                    date: 'Circa 4 Years Ago',
+                    description: 'Where our story first started. Two souls crossing paths and planting the first sweet seed of something special.',
+                    icon: '🌱'
+                },
+                {
+                    title: 'Our First Kiss',
+                    date: 'A Golden Memory',
+                    description: 'That gentle, unforgettable moment when everything else in the world quietly faded away.',
+                    icon: '✨'
+                },
+                {
+                    title: 'Her Soft Laugh',
+                    date: 'Every Single Day',
+                    description: 'Discovering how her chaotic, joyful laugh instantly brightens even the darkest room.',
+                    icon: '🌷'
+                },
+                {
+                    title: 'Finding Our Way Back',
+                    date: 'Reunited',
+                    description: 'After time apart and clearing up our misunderstanding, life gently guided us back to each other. Proof that what belongs together will always find its home.',
+                    icon: '🕊️'
+                },
+                {
+                    title: 'Today — Her Birthday',
+                    date: 'Today ❤️',
+                    description: 'Celebrating the birth of my sweet baby Mimo. My angel, my love, my whole heart.',
+                    icon: '🎁'
+                }
+            ],
+
+            loveReasons: [
+                {
+                    title: 'Your Chaotic & Cute Side',
+                    badge: 'Playful',
+                    shortDesc: 'The adorable, funny, unpredictable energy that makes me smile every day.',
+                    fullNote: 'I love your cute chaotic side so much! The funny little moments, your playful moods, and the spontaneous joy you bring into my life. You are uniquely, wonderfully Mimo.',
+                    icon: '🧸'
+                },
+                {
+                    title: 'Your Shyness & Sweetness',
+                    badge: 'Precious',
+                    shortDesc: 'The timid, soft smile that makes my heart melt instantly.',
+                    fullNote: 'There is something so tender about your shyness. The soft way you smile and the genuine sweetness you exude without even trying.',
+                    icon: '🌸'
+                },
+                {
+                    title: 'Comforting & Motherly Vibe',
+                    badge: 'Warmth',
+                    shortDesc: 'The safe, warm embrace that makes me feel cared for and deeply supported.',
+                    fullNote: 'You give me a comforting, protective warmth. When I am with you, I feel completely understood, listened to, and cared for in a way no one else could ever provide.',
+                    icon: '🕊️'
+                },
+                {
+                    title: 'Your Lovely Humility',
+                    badge: 'Gentle',
+                    shortDesc: 'How humble and soft-hearted you remain, no matter how amazing you are.',
+                    fullNote: 'Your heart is pure gold. You are incredibly beautiful and kind, yet so humble. That gentle spirit of yours is one of the things I cherish most.',
+                    icon: '🤍'
+                },
+                {
+                    title: 'Your Unwavering Support',
+                    badge: 'Strength',
+                    shortDesc: 'The way you stand by me and make me feel like I can conquer anything.',
+                    fullNote: 'Thank you for believing in me, for listening to me, and for being my rock. Knowing you are in my corner gives me so much peace and strength.',
+                    icon: '🌿'
+                },
+                {
+                    title: 'Simply Being "Mimo"',
+                    badge: 'Everything',
+                    shortDesc: 'Every single quirk, smile, and detail that makes you who you are.',
+                    fullNote: 'At the end of the day, I love everything that makes you Mimo. Your laugh, your presence, your heart. I fucking love you a lot!',
+                    icon: '✨'
+                }
+            ],
+
+            photoList: [
+                {
+                    title: 'My Sweet Angel',
+                    caption: 'Your warmth always brightens my day.',
+                    url: 'https://placehold.co/600x800/E8EFE9/344232?text=Mimo+Photo+1\n(Replace+in+CONFIG)'
+                },
+                {
+                    title: 'Her Cute Smile',
+                    caption: 'The laugh I never get tired of.',
+                    url: 'https://placehold.co/600x800/EBF2F7/344232?text=Mimo+Photo+2\n(Replace+in+CONFIG)'
+                },
+                {
+                    title: 'Precious Moment',
+                    caption: 'Every second with you is a gift.',
+                    url: 'https://placehold.co/600x800/FAF8F5/344232?text=Mimo+Photo+3\n(Replace+in+CONFIG)'
+                }
+            ],
+
+            loveLetter: [
+                "My sweet little baby Mimo,",
+                "Happy Birthday, my angel. Today is all about celebrating you—the sweetest, most caring, and most wonderful person in my universe.",
+                "Looking back at everything we've shared, I am filled with so much gratitude. We had our moments apart, but finding our way back to each other proved to me that my heart was always meant to be yours. You bring a comfort into my life that I can't even put into words. You listen to me, you support me, and you care for me with such warmth.",
+                "I love your laugh. I love your shyness. I love your cute chaotic side. I love how humble you are, and I love how deeply you care for the people in your life.",
+                "Thank you for being my habobti, my comfort, and my favorite part of every single day. I hope this new year of your life brings you as much endless joy as you give to me.",
+                "I love you so much, baby."
+            ],
+
+            miniGameQuestions: [
+                {
+                    question: "What is one flower that holds a very special place for Mimo?",
+                    options: ["Roses", "Lilies 🌸", "Tulips", "Sunflowers"],
+                    correct: 1,
+                    explanation: "Correct! Pure white lilies just like you!"
+                },
+                {
+                    question: "What does he lovingly call Oumaima?",
+                    options: ["Mimo", "My sweet baby Mimo", "Habobti & My Angel", "All of the above ❤️"],
+                    correct: 3,
+                    explanation: "Obviously! You are all of them!"
+                },
+                {
+                    question: "What happened after our misunderstanding years ago?",
+                    options: ["We grew apart forever", "We found our way back to each other ✨", "We forgot each other", "Nothing"],
+                    correct: 1,
+                    explanation: "Yes! Some connections are worth finding again!"
+                }
+            ],
+
+            mysteryGiftMessage: "It's not really a gift wrapped in paper... It's just me reminding you that you are deeply loved, cherished, and held safe in my heart today and every single day after. Happy Birthday, Mimo! ❤️",
+            finalMessage: "After everything we've been through, this isn't the end of a story—it's only the beautiful beginning of our next chapter together. Happy Birthday, my sweet little baby Mimo."
+        };
+
+        /* ==========================================================================
+           2. ENHANCED PARTICLES & CLICK LILY SPARK EFFECT
+           ========================================================================== */
+        let clickPetals = [];
+
+        function initParticleCanvas() {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = (canvas.width = window.innerWidth);
+            let height = (canvas.height = window.innerHeight);
+
+            window.addEventListener('resize', () => {
+                width = (canvas.width = window.innerWidth);
+                height = (canvas.height = window.innerHeight);
+            });
+
+            // Realistic Floating Lily Petals with Organic Curves
+            const petals = Array.from({ length: 28 }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                size: Math.random() * 10 + 8,
+                speedY: Math.random() * 0.6 + 0.3,
+                speedX: Math.random() * 0.5 - 0.25,
+                angle: Math.random() * Math.PI * 2,
+                spin: Math.random() * 0.02 - 0.01,
+                opacity: Math.random() * 0.5 + 0.35
+            }));
+
+            // Spawn Click Interactive Lily Petals
+            window.addEventListener('click', (e) => {
+                for (let i = 0; i < 6; i++) {
+                    clickPetals.push({
+                        x: e.clientX,
+                        y: e.clientY,
+                        vx: (Math.random() - 0.5) * 4,
+                        vy: -Math.random() * 3 - 1.5,
+                        size: Math.random() * 8 + 6,
+                        opacity: 1,
+                        rotation: Math.random() * Math.PI * 2
+                    });
+                }
+            });
+
+            function renderLilyPetal(ctx, x, y, size, angle, opacity) {
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.rotate(angle);
+                ctx.globalAlpha = opacity;
+
+                ctx.beginPath();
+                ctx.moveTo(0, -size);
+                ctx.bezierCurveTo(size * 0.7, -size * 0.4, size * 0.8, size * 0.4, 0, size);
+                ctx.bezierCurveTo(-size * 0.8, size * 0.4, -size * 0.7, -size * 0.4, 0, -size);
+
+                ctx.fillStyle = '#FFFDF9';
+                ctx.shadowColor = 'rgba(209, 223, 195, 0.6)';
+                ctx.shadowBlur = 6;
+                ctx.fill();
+
+                // Gentle Petal Center Ridge
+                ctx.beginPath();
+                ctx.moveTo(0, -size * 0.8);
+                ctx.lineTo(0, size * 0.7);
+                ctx.strokeStyle = 'rgba(209, 223, 195, 0.5)';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                ctx.restore();
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Render Background Floating Petals
+                petals.forEach((p) => {
+                    p.y += p.speedY;
+                    p.x += Math.sin(p.y * 0.008) + p.speedX;
+                    p.angle += p.spin;
+
+                    if (p.y > height + 20) {
+                        p.y = -20;
+                        p.x = Math.random() * width;
+                    }
+
+                    renderLilyPetal(ctx, p.x, p.y, p.size, p.angle, p.opacity);
+                });
+
+                // Render Interactive Click Burst Petals
+                for (let i = clickPetals.length - 1; i >= 0; i--) {
+                    const cp = clickPetals[i];
+                    cp.x += cp.vx;
+                    cp.y += cp.vy;
+                    cp.opacity -= 0.025;
+                    cp.rotation += 0.05;
+
+                    if (cp.opacity <= 0) {
+                        clickPetals.splice(i, 1);
+                    } else {
+                        renderLilyPetal(ctx, cp.x, cp.y, cp.size, cp.rotation, cp.opacity);
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        /* ==========================================================================
+           3. PROCEDURAL AUDIO SYNTHESIZER
+           ========================================================================== */
+        class SimpleAudioPlayer {
+            constructor() {
+                this.audioCtx = null;
+                this.isPlaying = false;
+                this.audioElement = new Audio(CONFIG.musicPath);
+                this.timer = null;
+
+                this.audioElement.onerror = () => {
+                    console.log("Local audio file not found. Falling back to built-in romantic Web Audio synth melody.");
+                };
+            }
+
+            initContext() {
+                if (!this.audioCtx) {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    this.audioCtx = new AudioContext();
+                }
+            }
+
+            toggle() {
+                if (this.isPlaying) this.pause();
+                else this.play();
+            }
+
+            play() {
+                this.initContext();
+                this.isPlaying = true;
+                
+                const playPromise = this.audioElement.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => this.startSynthMelody());
+                }
+                updateMusicUI(true);
+            }
+
+            pause() {
+                this.isPlaying = false;
+                this.audioElement.pause();
+                if (this.timer) clearInterval(this.timer);
+                updateMusicUI(false);
+            }
+
+            startSynthMelody() {
+                if (!this.audioCtx) return;
+                
+                const notes = [261.63, 329.63, 392.00, 440.00, 523.25, 659.25];
+                let step = 0;
+
+                if (this.timer) clearInterval(this.timer);
+                
+                this.timer = setInterval(() => {
+                    if (!this.isPlaying) return;
+                    
+                    const freq = notes[step % notes.length];
+                    this.playPluckNote(freq);
+                    
+                    if (step % 4 === 0) {
+                        this.playPluckNote(notes[0] / 2, 1.2);
+                    }
+                    
+                    step++;
+                }, 600);
+            }
+
+            playPluckNote(freq, duration = 0.8) {
+                try {
+                    const osc = this.audioCtx.createOscillator();
+                    const gain = this.audioCtx.createGain();
+                    
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, this.audioCtx.currentTime);
+                    
+                    gain.gain.setValueAtTime(0.12, this.audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, this.audioCtx.currentTime + duration);
+                    
+                    osc.connect(gain);
+                    gain.connect(this.audioCtx.destination);
+                    
+                    osc.start();
+                    osc.stop(this.audioCtx.currentTime + duration);
+                } catch (e) {
+                    console.error(e);
+                }
+            }
+        }
+
+        const musicPlayer = new SimpleAudioPlayer();
+
+        function updateMusicUI(playing) {
+            const icon = document.getElementById('music-icon');
+            const text = document.getElementById('music-status-text');
+            if (playing) {
+                icon.className = 'fa-solid fa-music text-sage-600 animate-bounce';
+                text.innerText = 'Music On ❤️';
+            } else {
+                icon.className = 'fa-solid fa-volume-xmark text-sage-400';
+                text.innerText = 'Music Paused';
+            }
+        }
+
+        /* ==========================================================================
+           4. DOM DYNAMIC POPULATION & INTERACTIVE BINDINGS
+           ========================================================================== */
+        function populateDynamicContent() {
+            document.getElementById('splash-partner-name').innerText = CONFIG.partnerName;
+            document.getElementById('hero-partner-name').innerText = CONFIG.partnerName;
+            document.getElementById('final-message-text').innerText = CONFIG.finalMessage;
+            document.getElementById('mystery-gift-text').innerText = CONFIG.mysteryGiftMessage;
+
+            // Section 3: Timeline
+            const timelineContainer = document.getElementById('timeline-container');
+            timelineContainer.innerHTML = CONFIG.timelineEvents.map((item, idx) => `
+                <div class="relative pl-6 sm:pl-10 group">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-white border-2 border-sage-500 flex items-center justify-center text-xs shadow-sm group-hover:scale-110 transition-transform">
+                        <span>${item.icon}</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border border-white space-y-2 hover:shadow-md transition">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display text-xl text-sage-900 font-medium">${item.title}</h3>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-sage-600 bg-sage-100 px-2.5 py-1 rounded-full">${item.date}</span>
+                        </div>
+                        <p class="font-serif text-sage-800 leading-relaxed text-base">${item.description}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Section 4: Why I Love You
+            const reasonsGrid = document.getElementById('reasons-grid');
+            reasonsGrid.innerHTML = CONFIG.loveReasons.map((reason, idx) => `
+                <div onclick="openReasonNote(${idx})" class="glass-card rounded-2xl p-6 border border-white space-y-4 cursor-pointer hover:-translate-y-1 hover:shadow-lg transition duration-300 flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl group-hover:scale-125 transition-transform">${reason.icon}</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-skysoft-700 bg-skysoft-100 px-2 py-0.5 rounded-full">${reason.badge}</span>
+                        </div>
+                        <h3 class="font-display text-lg text-sage-900 font-medium">${reason.title}</h3>
+                        <p class="font-serif text-sm text-sage-700 leading-relaxed">${reason.shortDesc}</p>
+                    </div>
+                    <div class="pt-2 text-xs text-sage-600 font-medium flex items-center space-x-1 group-hover:text-sage-900">
+                        <span>Read note</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Section 5: Gallery
+            const galleryGrid = document.getElementById('gallery-grid');
+            galleryGrid.innerHTML = CONFIG.photoList.map((photo, idx) => {
+                const rotations = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2'];
+                const rotClass = rotations[idx % rotations.length];
+                return `
+                    <div class="bg-white p-4 rounded-2xl shadow-md border border-sage-100 transform ${rotClass} hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col space-y-3">
+                        <div class="overflow-hidden rounded-xl bg-sage-50 aspect-[3/4] relative">
+                            <img src="${photo.url}" alt="${photo.title}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x800/E8EFE9/344232?text=Photo+${idx+1}';" />
+                        </div>
+                        <div class="text-center pt-1 space-y-1">
+                            <h4 class="font-handwriting text-2xl text-sage-900">${photo.title}</h4>
+                            <p class="font-serif italic text-xs text-sage-600">${photo.caption}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Section 6: Letter
+            const letterContainer = document.getElementById('letter-paragraphs');
+            letterContainer.innerHTML = CONFIG.loveLetter.map(p => `<p class="leading-relaxed">${p}</p>`).join('');
+
+            // Section 8: Quiz
+            renderQuizQuestion(0);
+        }
+
+        window.openReasonNote = function(index) {
+            const reason = CONFIG.loveReasons[index];
+            if (!reason) return;
+
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-sage-900/40 backdrop-blur-md animate-fade-in';
+            modal.innerHTML = `
+                <div class="glass-card max-w-md w-full p-8 rounded-3xl text-center space-y-6 shadow-2xl border border-white">
+                    <div class="text-4xl">${reason.icon}</div>
+                    <h3 class="font-display text-2xl text-sage-900 font-medium">${reason.title}</h3>
+                    <p class="font-serif text-lg text-sage-800 leading-relaxed italic bg-white/70 p-5 rounded-2xl border border-sage-100">${reason.fullNote}</p>
+                    <button onclick="this.closest('.fixed').remove()" class="px-6 py-2.5 rounded-full bg-sage-500 text-white text-sm font-medium hover:bg-sage-700 transition">
+                        Close ❤️
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function setupLoveLetter() {
+            const envelopeCard = document.getElementById('envelope-card');
+            const previewState = document.getElementById('letter-preview-state');
+            const contentState = document.getElementById('letter-content-state');
+
+            envelopeCard.addEventListener('click', () => {
+                previewState.classList.add('hidden');
+                contentState.classList.remove('hidden');
+            });
+        }
+
+        function startRelationshipCounter() {
+            const startDate = new Date(CONFIG.relationshipStartDate).getTime();
+
+            function update() {
+                const now = new Date().getTime();
+                const diff = Math.max(0, now - startDate);
+
+                const seconds = Math.floor((diff / 1000) % 60);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const daysTotal = Math.floor(diff / (1000 * 60 * 60 * 24));
+                
+                const years = Math.floor(daysTotal / 365);
+                const months = Math.floor((daysTotal % 365) / 30);
+                const days = Math.floor((daysTotal % 365) % 30);
+
+                document.getElementById('timer-years').innerText = years;
+                document.getElementById('timer-months').innerText = months;
+                document.getElementById('timer-days').innerText = days;
+                document.getElementById('timer-hours').innerText = hours;
+                document.getElementById('timer-minutes').innerText = minutes;
+                document.getElementById('timer-seconds').innerText = seconds;
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        let heartClickCount = 0;
+        function setupHeartCounter() {
+            const btn = document.getElementById('heart-burst-btn');
+            const display = document.getElementById('heart-count-display');
+            const msg = document.getElementById('heart-message');
+
+            btn.addEventListener('click', () => {
+                heartClickCount += 100;
+                display.innerText = heartClickCount.toLocaleString();
+
+                if (heartClickCount < 500) msg.innerText = "Keep clicking, Mimo!";
+                else if (heartClickCount < 2000) msg.innerText = "A lot!";
+                else if (heartClickCount < 5000) msg.innerText = "Way more than this!";
+                else msg.innerText = "Okay... there aren't enough numbers for this! Infinity ❤️";
+            });
+        }
+
+        let currentQuizIndex = 0;
+        function renderQuizQuestion(index) {
+            const quizContainer = document.getElementById('quiz-container');
+            const q = CONFIG.miniGameQuestions[index];
+            if (!q) return;
+
+            document.getElementById('quiz-step').innerText = index + 1;
+            document.getElementById('quiz-total').innerText = CONFIG.miniGameQuestions.length;
+
+            quizContainer.innerHTML = `
+                <p class="font-serif text-sm font-medium text-sage-900">${q.question}</p>
+                <div class="space-y-2 pt-2">
+                    ${q.options.map((opt, optIdx) => `
+                        <button onclick="handleQuizAnswer(${index}, ${optIdx})" class="w-full py-2 px-4 rounded-xl bg-white hover:bg-sage-100 text-sage-800 text-xs font-medium border border-sage-200 transition text-left">
+                            ${opt}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        window.handleQuizAnswer = function(qIdx, optIdx) {
+            const q = CONFIG.miniGameQuestions[qIdx];
+            const feedback = document.getElementById('quiz-feedback');
+
+            if (optIdx === q.correct) {
+                feedback.innerText = q.explanation;
+                feedback.className = "text-xs font-medium text-sage-700 font-serif italic";
+                setTimeout(() => {
+                    if (qIdx + 1 < CONFIG.miniGameQuestions.length) {
+                        currentQuizIndex++;
+                        renderQuizQuestion(currentQuizIndex);
+                    } else {
+                        document.getElementById('quiz-container').innerHTML = `
+                            <div class="py-4 space-y-2">
+                                <div class="text-3xl">🎉</div>
+                                <p class="font-display text-sage-900 font-medium">You passed! Obviously. It's us ❤️</p>
+                            </div>
+                        `;
+                    }
+                }, 1200);
+            } else {
+                feedback.innerText = "Try again, baby! ❤️";
+                feedback.className = "text-xs font-medium text-red-400 font-serif italic";
+            }
+        }
+
+        function setupScrollLilyBloom() {
+            const lilySvg = document.getElementById('lily-svg-bloom');
+            window.addEventListener('scroll', () => {
+                if (!lilySvg) return;
+                const rect = lilySvg.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    lilySvg.classList.add('scale-105');
+                    lilySvg.style.filter = 'drop-shadow(0 0 20px rgba(209,223,195,0.9))';
+                }
+            });
+        }
+
+        /* ==========================================================================
+           5. INITIALIZATION
+           ========================================================================== */
+        window.addEventListener('DOMContentLoaded', () => {
+            populateDynamicContent();
+            initParticleCanvas();
+
+            document.getElementById('enter-btn').addEventListener('click', () => {
+                const splashModal = document.getElementById('splash-modal');
+                splashModal.classList.add('opacity-0', 'pointer-events-none');
+                musicPlayer.play();
+                setTimeout(() => splashModal.classList.add('hidden'), 1000);
+            });
+
+            document.getElementById('music-toggle-btn').addEventListener('click', () => musicPlayer.toggle());
+            document.getElementById('open-config-btn').addEventListener('click', () => document.getElementById('config-modal').classList.remove('hidden'));
+            document.getElementById('close-config-btn').addEventListener('click', () => document.getElementById('config-modal').classList.add('hidden'));
+            document.getElementById('gift-box-btn').addEventListener('click', () => document.getElementById('gift-modal').classList.remove('hidden'));
+            document.getElementById('close-gift-btn').addEventListener('click', () => document.getElementById('gift-modal').classList.add('hidden'));
+
+            setupLoveLetter();
+            startRelationshipCounter();
+            setupHeartCounter();
+            setupScrollLilyBloom();
+        });
+    </script>
+</body>
+</html>
